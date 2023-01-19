@@ -6,6 +6,7 @@
 
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #61876E;
 }
 
 /* nav */
@@ -13,10 +14,6 @@ body {
     background-color: #3C6255;
     border-bottom: 1px solid #a6bb8d;
     border-top: 1px solid #a6bb8d;
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
 }
 
 nav {
@@ -24,7 +21,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     min-height: 10vh;
-    width: 90%;
+    width: 90%; 
     margin: 0 auto;
 }
 
@@ -126,10 +123,9 @@ nav ul a:hover {
 
 /* contact */
 .contact {
-    background-color: #61876E;
     display: flex;
     align-items: center;
-    height: 100vh;
+    padding: 5em 0;
 }
 
 .form-container {
@@ -137,7 +133,7 @@ nav ul a:hover {
     justify-content: center;
     align-items: center;
     width: 600px;
-    margin: 1em auto;
+    margin: 0 auto;
     background-color: #A6BB8D;
     border-radius: .2em;
     padding: 2em 1em;
@@ -146,7 +142,7 @@ nav ul a:hover {
 .form {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
 }
 
 .form div.text input, .form div.email input {
@@ -162,6 +158,9 @@ nav ul a:hover {
     font-size: 2em;
     margin: .5em 0;
     color: #3C6255;
+    border-bottom: 2px solid #3C6255;
+    padding-bottom: 2px;
+    width: fit-content;
 }
 
 input, textarea {
@@ -196,7 +195,6 @@ button.submit:hover {
 /* Music */
 section.card {
     padding: 60px 0;
-    background-color: #61876E;
 }
 
 .card-container {
@@ -256,12 +254,13 @@ section.card {
 
 /* Connect */
 .connect {
-    background-color: #61876E;
-    height: 90vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .connect-container {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -355,14 +354,16 @@ a:hover .fa-youtube {
     /* hero */
 
     .hero-section {
-        height: 1300px;
+        height: 200vh;
+        margin-top: 0;
     }
+
     .hero-image-container {
         display: flex;
-        height: 100%;
-        gap: 2em;
+        gap: 2.7em;
         flex-wrap: wrap;
         align-content: space-around;
+        
     }
 
     .text-container h1 {
@@ -377,6 +378,7 @@ a:hover .fa-youtube {
         order: 5;
         gap: 2em;
         padding-bottom: 2em;
+        margin-left: 0;
     }
 
     /* Music */
@@ -396,20 +398,27 @@ a:hover .fa-youtube {
     }
 
     .hero-section {
-        height: 2000px;
+        height: 400vh;
     }
 
     .hero-image-container {
         height: 100%;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
         flex: 0;
     }
 
     .no-one-card-container {
         flex: 0;
-        margin-left: 0;
+    }
+
+    .no-one-card-container h2 {
+        font-size: 1.75em;
+    }
+
+    .no-one {
+        width: 400px;
+        height: 400px;
     }
 
     .text-container {
@@ -425,26 +434,32 @@ a:hover .fa-youtube {
     }
 
     .text-container p {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     .maherzain {
         order: -2;
         text-align: center;
         flex: 0;
+        width: 60%;
     }
 
     .maherzain img {
-        width: 80%;
+        width: 100%;
         border-radius: 10%;
         background-color: #3c6255;
         padding: .5em;
     }
 
     /* burger section */
-       .burger {
+    .burger {
         display: block;
         cursor: pointer;
+    }
+
+    nav {
+        /* position: relative; */
+        /* overflow-x: hidden; */
     }
 
     .nav-links {
@@ -458,6 +473,7 @@ a:hover .fa-youtube {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 3em;
         width: 50%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
@@ -465,7 +481,6 @@ a:hover .fa-youtube {
 
     .nav-links li {
         opacity: 0;
-        margin: 1.5em;
     }
 
     .nav-active {
@@ -501,6 +516,24 @@ a:hover .fa-youtube {
 
 /* For Mobile View */
 @media (max-width: 700px) {
+    /* hero */
+    .hero-section {
+        height: 300vh;
+    }
+
+    .hero-image-container {
+        gap: 0;
+    }
+
+    .no-one-card-container {
+        padding-bottom: 0;
+    }
+
+    .no-one {
+        width: 300px;
+        height: 300px;
+    }
+
     /* Contact */
     .card-container {
         grid-template-columns: repeat(1, 1fr);
@@ -515,33 +548,34 @@ a:hover .fa-youtube {
     .connect h1 {
         width: 300px;
     }
-}
 
-@media (max-width: 650px) {
-    .form-container {
-        width: 500px;
-        padding: 1.5em;
+        /* Contact */
+    .contact {
+        padding: 1.5em 0;
     }
-}
 
-@media (max-width: 555px) {
-    /* Contact */
     .form-container {
         border-radius: .3em;
         background-color: unset;
         width: 85%;
     }
 
+    .form {
+        gap: 2em;
+    }
+
     .form h1 {
+        font-size: 3em;
         text-align: center;
     }
 
     .form div.text input:nth-child(1), .form div.email input:nth-child(1) {
-        margin-bottom: 1em;
+        margin-bottom: 2em;
     }
 
     input {
         width: 100%;
+        height: 40px;
     }
 
     .form .address input, textarea {
